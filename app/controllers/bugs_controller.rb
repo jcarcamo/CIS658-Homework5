@@ -15,6 +15,9 @@ class BugsController < ApplicationController
   # GET /bugs/new
   def new
     @bug = Bug.new
+    @bug.issue_type = Bug.issue_types[:feature]
+    @bug.priority = Bug.priorities[:medium]
+    @bug.status = Bug.statuses[:open]
   end
 
   # GET /bugs/1/edit

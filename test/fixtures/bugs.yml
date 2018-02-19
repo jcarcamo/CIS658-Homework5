@@ -2,7 +2,7 @@
 
 one:
   title: MyString
-  description: MyText
+  description: MyText MyText MyText MyText
   issue_type: 1
   priority: 1
   status: 1
