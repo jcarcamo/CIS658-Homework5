@@ -37,6 +37,11 @@
     <%= form.select :status, Bug.statuses.keys, selected: @bug.status%>
   </div>
 
+  <div class="field">
+      <%= form.label :author %>
+      <%= form.select :author_id, Author.all.collect { |author| [ "#{author.fname} #{author.lname}", author.id ] }, prompt: '-Select-' %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>
