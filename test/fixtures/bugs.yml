@@ -6,6 +6,7 @@ one:
   issue_type: 1
   priority: 1
   status: 1
+  author: one
 
 two:
   title: MyString
@@ -13,3 +14,4 @@ two:
   issue_type: 1
   priority: 1
   status: 1
+  author: one

@@ -6,6 +6,7 @@ class BugTest < ActiveSupport::TestCase
     end
 
     test "bug must be valid" do
+          @bug.valid?
           assert @bug.valid?
     end
 

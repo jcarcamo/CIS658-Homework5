@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180215210951) do
+ActiveRecord::Schema.define(version: 20180222033623) do
+
+  create_table "authors", force: :cascade do |t|
+    t.string "lname"
+    t.string "fname"
+    t.string "email"
+    t.string "thumbnail"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "bugs", force: :cascade do |t|
     t.string "title"
@@ -20,6 +29,8 @@ ActiveRecord::Schema.define(version: 20180215210951) do
     t.integer "status", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "author_id"
+    t.index ["author_id"], name: "index_bugs_on_author_id"
   end
 
 end
