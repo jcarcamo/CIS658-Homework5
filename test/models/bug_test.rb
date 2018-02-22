@@ -10,6 +10,11 @@ class BugTest < ActiveSupport::TestCase
           assert @bug.valid?
     end
 
+    test "author must be present" do
+        @bug.author = nil
+        assert_not @bug.valid?
+    end
+
     test "title must be present" do
         @bug.title = ""
         assert_not @bug.valid?
