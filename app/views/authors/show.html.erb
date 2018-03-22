@@ -1,24 +1,27 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Lname:</strong>
-  <%= @author.lname %>
-</p>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title"><%= @author.fname + " " + @author.lname %>
+        <span class="custom-panel-icon">
+            <%= link_to '', edit_author_path(@author), class:"pull-right glyphicon glyphicon-pencil"%>
+        </span>
+    </h3>
 
-<p>
-  <strong>Fname:</strong>
-  <%= @author.fname %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @author.email %>
-</p>
-
-<p>
-  <strong>Thumbnail:</strong>
-  <%= @author.thumbnail %>
-</p>
-
-<%= link_to 'Edit', edit_author_path(@author) %> |
-<%= link_to 'Back', authors_path %>
+  </div>
+  <div class="panel-body">
+      <div class="row">
+          <div class="col-sm-4">
+              <% if not @author.thumbnail.blank? %>
+              <img src="<%= @author.thumbnail %>" alt='<%= @author.fname + " " + @author.lname %>' />
+              <% end %>
+          </div>
+          <div class="col-sm-4">
+              <span>
+                <strong>Email:</strong>
+                <%= @author.email %>
+              </span>
+          </div>
+      </div>
+  </div>
+</div>

@@ -1,4 +1,4 @@
-<%= form_with(model: author, local: true) do |form| %>
+<%= form_with(model: author, local: true, class: "form-horizontal center") do |form| %>
   <% if author.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(author.errors.count, "error") %> prohibited this author from being saved:</h2>
@@ -11,27 +11,44 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :lname %>
-    <%= form.text_field :lname, id: :author_lname %>
-  </div>
+  <fieldset>
+      <legend>
+          <%= legend %>
+      </legend>
 
-  <div class="field">
-    <%= form.label :fname %>
-    <%= form.text_field :fname, id: :author_fname %>
-  </div>
+      <div class="form-group">
+        <%= form.label :fname, "First Name", class: "col-md-2 control-label" %>
+        <div class="col-md-10">
+            <%= form.text_field :fname, id: :author_fname %>
+        </div>
+      </div>
 
-  <div class="field">
-    <%= form.label :email %>
-    <%= form.text_field :email, id: :author_email %>
-  </div>
+      <div class="form-group">
+        <%= form.label :lname, "Last Name", class: "col-md-2 control-label" %>
+        <div class="col-md-10">
+            <%= form.text_field :lname, id: :author_lname %>
+        </div>
+      </div>
 
-  <div class="field">
-    <%= form.label :thumbnail %>
-    <%= form.text_field :thumbnail, id: :author_thumbnail %>
-  </div>
+      <div class="form-group">
+        <%= form.label :email, "Email", class: "col-md-2 control-label"  %>
+        <div class="col-md-10">
+            <%= form.text_field :email, id: :author_email %>
+        </div>
+      </div>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+      <div class="form-group">
+        <%= form.label :thumbnail,"Thumbnail", class: "col-md-2 control-label"   %>
+        <div class="col-md-10">
+            <%= form.text_field :thumbnail, id: :author_thumbnail %>
+        </div>
+      </div>
+      <div class="form-group">
+          <label class="col-md-2 control-label" for="submit"></label>
+          <div class="col-md-10">
+              <%= link_to 'Back', authors_path, class: "btn btn-default btn-danger" %>
+              <%= form.submit "Submit", class: "btn btn-default btn-primary" %>
+          </div>
+      </div>
+  </fieldset>
 <% end %>

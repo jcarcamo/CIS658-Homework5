@@ -31,3 +31,44 @@
 .navbar {
     margin-bottom: 0;
 }
+
+.thead-light {
+    th {
+      color: #393F45;
+      background-color: #E4E7EB;
+      border-color: #000000;
+    }
+  }
+
+td, .custom-panel-icon{
+    /* unvisited link */
+    a:link {
+        color: #414040;
+        text-decoration: none;
+    }
+
+    /* visited link */
+    a:visited {
+        color: #393F45;
+        text-decoration: none;
+    }
+
+    /* mouse over link */
+    a:hover {
+        color: #ACADAD;
+        text-decoration: none;
+    }
+
+    /* selected link */
+    a:active {
+        color: #ACADAD;
+        text-decoration: none;
+    }
+}
+
+legend{
+    font-size: 24px;
+}
+input[type="text"]{
+        width: 100%;
+}
