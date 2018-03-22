@@ -1,6 +1,11 @@
-<h1>BugOverflow Bug tracker</h1>
-
-<h2>Remember to create an author before attempting to create bugs!</h2>
-<%= link_to 'Authors', authors_path %>
-<h2>Bugs</h2>
-<%= link_to 'Bugs', bugs_path %>
+<div class="jumbotron">
+    <h1 class="display-4">BugOverflow Bug tracker</h1>
+    <div class="overlay"></div>
+</div>
+<div class="container">
+    <div class="row">
+        <% @bugs.each do |bug| %>
+            <%= render 'bugs/card', bug: bug %>
+        <% end %>
+    </div>
+</div>

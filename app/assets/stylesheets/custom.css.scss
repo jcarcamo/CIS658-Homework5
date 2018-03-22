@@ -1,0 +1,33 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+.jumbotron {
+    background-position: center;
+    background-size: cover;
+    background-image: url('ladybug.jpg');
+    min-height: 25vw;
+    position: relative;
+}
+
+.jumbotron .overlay {
+    background-color: rgba(0,0,0,0.2);
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 0;
+}
+
+.jumbotron h1 {
+    margin-left: 5px;
+    margin-bottom: 5px;
+    color: #FFFFFF;
+    position: absolute;
+    bottom: 0;
+    z-index: 100;
+}
+
+.navbar {
+    margin-bottom: 0;
+}
